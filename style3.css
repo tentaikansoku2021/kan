@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(./images/モアイ.jpg);
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.18;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+header .logo {
+   width: 52px;
+   height: 52px;
+   border-radius: 50%;
+   transition: all 0.3s;
+}
+
+
+
+header .icon .logo:hover {
+   opacity: 0.85;
+}
+
+/* Hamburger_menu */
+.g_toggle {
+    position: relative;
+    margin-top: 18px;
+}
+
+.g_hidden {
+    display: none;
+}
+
+#g_open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+#g_open span,
+#g_open span::before,
+#g_open span::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #999;
+    display: block;
+    cursor: pointer;
+}
+
+#g_open span::before {
+    bottom: -8px;
+}
+
+#g_open span::after {
+    bottom: -16px;
+}
+
+#g_close {
+    display: none;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+#g_input:checked ~ #g_close {
+    display: block;
+    opacity: 0.5;
+    
+    }
+
+#g_input:checked ~ #g_content {
+    transform: translateX(0%);
+}
+
+#g_content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    width: 70%;
+    min-width: 300px;
+    height: 100%;
+    background: rgba(0, 0, 0,0.8);
+    transform: translate(-105%);
+    transition: 0.3s ease-in-out;
+}
+
+.g_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.g_item {
+    border-bottom: 2px dotted #eee;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+
+.g_item a {
+    font-size: 14px;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+/* --------------------------- */
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+header nav .contact {
+    display: block;
+    padding: 4px 20px 7px;
+    background-color: burlywood;
+    border-radius: 25px;
+}
+
+header nav ul li a:hover {
+    color: chocolate;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    white-space: nowrap;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+main .buttons {
+    margin-top: 30px;
+}
+
+main .buttons button {
+    padding: 18px 35px;
+    background-color: cyan;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 30px;
+    transition: all 0.3s;
+}
+
+main .buttons button:hover {
+    color: chocolate;
+}
+
+#cursor {
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(247, 246, 239, 0.5);
+    position: fixed;
+    top: -16px;
+    left: -16px;
+    border-radius: 50%;
+    transition: 0.15s;
+
+}
+
+@media screen and (max-width:768px) {
+    .sp_only {
+        display: block;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    main h1 {
+        font-size: 30px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+     .buttons {
+        display: flex;
+        flex-direction: column;
+     }
+
+     .buttons button {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        font-size: 12px;
+        font-weight: 600;
+     }
+
+    .pc_only {
+        display: none;
+    }
+    
+    #cursor {
+        display: none;
+    }
+    /* .nav-active#g_content {
+        display: block;
+    } */
+}
+
+@media screen and (min-width:769px) {
+    .sp_only {
+        display: none;
+    }
+
+}
