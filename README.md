@@ -1,3 +1,2 @@
-# kantarou
-# kan
-# kan
+kantarou's homepage
+
