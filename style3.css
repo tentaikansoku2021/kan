@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
+    
 }
 
 body::after {
@@ -217,7 +219,8 @@ main .buttons button:hover {
 
 }
 
-@media screen and (max-width:768px) {
+@media  (max-width:768px) {
+   
     .sp_only {
         display: block;
     }
@@ -228,6 +231,7 @@ main .buttons button:hover {
 
     body {
         height: 100vh;
+      
     }
 
     main h1 {
@@ -241,22 +245,23 @@ main .buttons button:hover {
      .buttons {
         display: flex;
         flex-direction: column;
+        align-items: center;
+       
+       
      }
 
-     .buttons button {
-        margin-bottom: 10px;
+     main .buttons button {
+        margin: 0px auto 15px;
         padding: 10px 20px;
-        font-size: 12px;
-        font-weight: 600;
+        font-size: 14px;
+        
      }
 
     .pc_only {
         display: none;
     }
-    
-    #cursor {
-        display: none;
-    }
+   
+   
     /* .nav-active#g_content {
         display: block;
     } */
